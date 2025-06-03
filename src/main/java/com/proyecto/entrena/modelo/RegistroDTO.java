@@ -1,39 +1,28 @@
 package com.proyecto.entrena.modelo;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
-@Entity
-@Table(name = "usuario")
-public class Usuario {
+public class RegistroDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUsuario;
-    @Column
+    @NotBlank(message = "El nombre completo es obligatorio")
     private String nombreCompleto;
-    @Column
+    @NotBlank(message = "El nombre de usuario es obligatorio")
     private String nombreUsuario;
-    @Column(unique = true)
+    @NotBlank(message = "El DNI es obligatorio")
+    @Size(min=8, max=8, message = "El DNI debe contener 8 dígitos")
     private String dni;
-    @Column
+    @NotBlank(message = "El teléfono es obligatorio")
+    @Size(min=9, max=9, message = "El teléfono debe contener 9 dígitos")
     private String telefono;
-    @Column(unique = true, nullable = false)
+    @NotBlank(message = "El correo es obligatorio")
+    @Email(message = "Debe ingresar un correo válido")
     private String email;
-    @Column
+    @NotBlank(message = "La contraseña es obligatoria")
+    @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
     private String contrasena;
-    @Column
+    @NotBlank(message = "Debe confirmar la contraseña")
+    private String confirmarContrasena;
     private String rol;
-
-    public Usuario() {
-    }
-
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public String getNombreCompleto() {
         return nombreCompleto;
@@ -81,6 +70,14 @@ public class Usuario {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getConfirmarContrasena() {
+        return confirmarContrasena;
+    }
+
+    public void setConfirmarContrasena(String confirmarContrasena) {
+        this.confirmarContrasena = confirmarContrasena;
     }
 
     public String getRol() {
