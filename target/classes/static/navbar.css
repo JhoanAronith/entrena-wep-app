@@ -1,0 +1,108 @@
+body {
+    background: #fff;
+    color: #000;
+}
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #000 !important;
+    position: relative;
+    margin: 0 0.75rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #014994 !important;
+}
+
+.btn-cart {
+    background: #014994;
+    color: #fff;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-cart:hover {
+    background: #012d62;
+    color: #fff;
+}
+
+.btn-login,
+.btn-register {
+    border-radius: 30px;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: all 0.2s;
+    background: #fff;
+    color: #014994;
+    border: 1px solid #014994;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    background: #e0eefd;
+    color: #012d62;
+}
+
+.form-search {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-left: 1px solid #eee;
+    padding-left: 1rem;
+}
+
+.form-search .form-control {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ced4da;
+}
+
+.form-search .form-control:focus {
+    background: #fff;
+    color: #000;
+    border-color: #014994;
+    box-shadow: 0 0 0 0.2rem rgba(1, 73, 148, 0.1);
+}
+
+.form-search .btn {
+    color: #014994;
+    border-color: #014994;
+    background: #fff;
+    border-radius: 30px;
+}
+
+.form-search .btn:hover {
+    background: #e0eefd;
+    color: #012d62;
+    border-color: #012d62;
+}
+
+.btn-cart i {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .form-search {
+        margin: 1rem 0 0 0;
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+    }
+}
