@@ -1,0 +1,79 @@
+body {
+    background-color: #ddeeff;
+}
+
+/* Sección Hero */
+.hero-section {
+    height: 60vh;
+    background: url('/hero.jpg') center center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: #014994;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #013366;
+}
+
+/* Sección Beneficios */
+.benefits-section h2 {
+    font-weight: 700;
+}
+
+.benefits-section i {
+    color: #014994;
+}
+
+.benefits-section p {
+    font-weight: 300;
+}
+
+/* Sección Testimonios */
+.testimonials-section h2 {
+    font-weight: 700;
+}
+
+.testimonials-section .card {
+    border: none;
+    border-left: 5px solid #014994;
+    background-color: #f9f9f9;
+}
+
+/* Llamado a la Acción */
+.cta-section {
+    background-color: #014994;
+}
+
+.cta-section h2 {
+    font-weight: 600;
+}
+
+.cta-section .btn-light {
+    background-color: #ffffff;
+    color: #014994;
+    font-weight: bold;
+}
+
+.cta-section .btn-light:hover {
+    background-color: #e6e6e6;
+}
+

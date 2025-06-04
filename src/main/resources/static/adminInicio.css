@@ -1,0 +1,25 @@
+body {
+    background-color: #f4f8fc;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background-color: #014994;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #013366;
+}

@@ -1,0 +1,12 @@
+<footer th:fragment="footer" class="footer py-4 text-white" style="background-color: #014994;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-2 mb-md-0 text-center text-md-start">
+            <strong>Entrena - Gimnasio Virtual</strong> &copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span>. Todos los derechos reservados.
+        </div>
+        <div class="text-center text-md-end">
+            <a th:href="@{/inicio}" class="text-white text-decoration-none me-3">Inicio</a>
+            <a th:href="@{/ejercicios}" class="text-white text-decoration-none me-3">Ejercicios</a>
+            <a th:href="@{/rutinas}" class="text-white text-decoration-none">Rutinas</a>
+        </div>
+    </div>
+</footer>
