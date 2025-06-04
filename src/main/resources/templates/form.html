@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}">
+  <title th:text="${ejercicio.id != null} ? 'Editar Ejercicio' : 'Nuevo Ejercicio'"></title>
+</head>
+<body>
+<h1 th:text="${ejercicio.id != null} ? 'Editar Ejercicio' : 'Nuevo Ejercicio'"></h1>
+<form th:action="@{${ejercicio.id != null} ? '/ejercicios/update/' + ${ejercicio.id} : '/ejercicios'}" method="post">
+  <label>Nombre:</label><br>
+  <input type="text" name="nombre" th:value="${ejercicio.nombre}" required><br><br>
+
+  <label>Descripción:</label><br>
+  <textarea name="descripcion" required th:text="${ejercicio.descripcion}"></textarea><br><br>
+
+  <label>Tipo:</label><br>
+  <input type="text" name="tipo" th:value="${ejercicio.tipo}" required><br><br>
+
+  <label>Duracion (minutos):</label><br>
+  <input type="number" name="duracion" th:value="${ejercicio.duracion}" required><br><br>
+
+  <label>Enlace:</label><br>
+  <input type="url" name="enlace" th:value="${ejercicio.enlace}"><br><br>
+
+  <button type="submit">Guardar</button>
+</form>
+<a th:href="@{/ejercicios}">Volver a la lista</a>
+</body>
+</html>
