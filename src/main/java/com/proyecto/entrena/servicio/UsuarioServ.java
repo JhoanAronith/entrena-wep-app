@@ -17,13 +17,13 @@ public class UsuarioServ implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = repo.findByEmail(email);
-        if (usuario != null) {
-            var springUser = User.withUsername(usuario.getEmail())
-                    .password(usuario.getContrasena())
-                    .roles(usuario.getRol().toUpperCase())
-                    .build();
-            return springUser;
-        }
+//        if (usuario != null) {
+//            var springUser = User.withUsername(usuario.getEmail())
+//                    .password(usuario.getContrasena())
+//                    .roles(usuario.getRol().toUpperCase())
+//                    .build();
+//            return springUser;
+//        }
         return null;
     }
     

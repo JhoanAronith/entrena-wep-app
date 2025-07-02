@@ -34,39 +34,39 @@ public class UsuarioControl {
         return "registro";
     }
 
-    //Método POST para registrar un nuevo cliente
-    @PostMapping("/registro")
-    public String registrarUsuario(Model model, @Valid @ModelAttribute RegistroDTO registroDTO, BindingResult result) {
-        if (!registroDTO.getContrasena().equals(registroDTO.getConfirmarContrasena())) {
-            result.addError(new FieldError("registroDTO", "confirmarContrasena", "Las contraseñas no son iguales"));
-        }
-        Usuario usuario = repo.findByEmail(registroDTO.getEmail());
-        if (usuario != null) {
-            result.addError(new FieldError("registroDTO", "email", "El correo ya está en uso"));
-        }
-        if (result.hasErrors()) {
-            model.addAttribute("registroDTO", registroDTO);
-            return "registro";
-        }
-        try {
-            var bCryptEncoder = new BCryptPasswordEncoder();
-            Usuario nuevoUsuario = new Usuario();
-            nuevoUsuario.setNombreCompleto(registroDTO.getNombreCompleto());
-            nuevoUsuario.setNombreUsuario(registroDTO.getNombreUsuario());
-            nuevoUsuario.setDni(registroDTO.getDni());
-            nuevoUsuario.setTelefono(registroDTO.getTelefono());
-            nuevoUsuario.setEmail(registroDTO.getEmail());
-            nuevoUsuario.setRol(registroDTO.getRol());
-            nuevoUsuario.setContrasena(bCryptEncoder.encode(registroDTO.getContrasena()));
-            repo.save(nuevoUsuario);
-            model.addAttribute("registroDTO", new RegistroDTO());
-            model.addAttribute("success", true);
-        } catch (Exception ex) {
-            result.addError(new ObjectError("globalError", "Ocurrió un error inesperado, intenta nuevamente"));
-            return "registro";
-        }
-        return "registro";
-    }
+//    //Método POST para registrar un nuevo cliente
+//    @PostMapping("/registro")
+//    public String registrarUsuario(Model model, @Valid @ModelAttribute RegistroDTO registroDTO, BindingResult result) {
+//        if (!registroDTO.getContrasena().equals(registroDTO.getConfirmarContrasena())) {
+//            result.addError(new FieldError("registroDTO", "confirmarContrasena", "Las contraseñas no son iguales"));
+//        }
+//        Usuario usuario = repo.findByEmail(registroDTO.getEmail());
+//        if (usuario != null) {
+//            result.addError(new FieldError("registroDTO", "email", "El correo ya está en uso"));
+//        }
+//        if (result.hasErrors()) {
+//            model.addAttribute("registroDTO", registroDTO);
+//            return "registro";
+//        }
+//        try {
+//            var bCryptEncoder = new BCryptPasswordEncoder();
+//            Usuario nuevoUsuario = new Usuario();
+//            nuevoUsuario.setNombreCompleto(registroDTO.getNombreCompleto());
+//            nuevoUsuario.setNombreUsuario(registroDTO.getNombreUsuario());
+//            nuevoUsuario.setDni(registroDTO.getDni());
+//            nuevoUsuario.setTelefono(registroDTO.getTelefono());
+//            nuevoUsuario.setEmail(registroDTO.getEmail());
+//            nuevoUsuario.setRol(registroDTO.getRol());
+//            nuevoUsuario.setContrasena(bCryptEncoder.encode(registroDTO.getContrasena()));
+//            repo.save(nuevoUsuario);
+//            model.addAttribute("registroDTO", new RegistroDTO());
+//            model.addAttribute("success", true);
+//        } catch (Exception ex) {
+//            result.addError(new ObjectError("globalError", "Ocurrió un error inesperado, intenta nuevamente"));
+//            return "registro";
+//        }
+//        return "registro";
+//    }
 
 //Mostrar página del login
     @GetMapping("/login")
